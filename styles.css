@@ -1,0 +1,13 @@
+#navbar > ul {
+  list-style-type: none; /* menghiangkan bullet pada list */
+  display: flex;
+}
+
+li > .nav-link {
+  text-decoration: none; /* Menghilangkan underline pada link */
+  color: black;
+}
+
+.center {
+  text-align: center;
+}
