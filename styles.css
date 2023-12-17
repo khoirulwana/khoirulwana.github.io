@@ -1,3 +1,19 @@
+:root {
+  /*using color pallette*/
+  --color1: #5f6f52;
+  --color2: #a9b388;
+  --color3: #fefae0;
+  --color4: #b99470;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color1);
+}
 #navbar > ul {
   list-style-type: none; /* menghiangkan bullet pada list */
   display: flex;
@@ -10,4 +26,79 @@ li > .nav-link {
 
 .center {
   text-align: center;
+}
+
+/*Projects*/
+.my-work .project {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  /*
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  justify-items: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  grid-gap: 0.5rem;
+  width: 95%;
+  height: auto;
+  */
+}
+
+.my-work .project .project-card {
+  width: 300px;
+  height: 280px;
+  padding: 10px;
+  display: grid;
+  grid-template-areas:
+    "preview preview"
+    "project-title project-title"
+    "preview-site view-code";
+  justify-items: center;
+  row-gap: 0;
+  border-radius: 10px;
+}
+
+.my-work .project .project-card .project-title {
+  grid-area: project-title;
+  margin: 0;
+}
+
+.my-work .project .project-card .preview {
+  grid-area: preview;
+  width: 300px;
+  height: 180px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.2s; /* Animation */
+}
+
+.my-work .project .project-card .preview:hover {
+  transform: scale(1.5); /*zoom image on hover*/
+}
+
+.my-work .project .project-card .preview-site {
+  grid-area: preview-site;
+  text-decoration: none;
+  background-color: var(--color3);
+  width: 120px;
+  height: 22px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 45px;
+}
+
+.my-work .project .project-card .view-code {
+  grid-area: view-code;
+  text-decoration: none;
+  background-color: var(--color3);
+  width: 120px;
+  height: 22px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 45px;
 }
