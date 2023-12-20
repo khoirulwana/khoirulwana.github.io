@@ -1,1 +1,1 @@
-alert("Hello there! Thus website is underconstruction");
+alert("Hello there! This website is underconstruction");
