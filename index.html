@@ -5,39 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
+
     <title>Khoirul Wakiah Nasution</title>
   </head>
   <body>
     <header id="header">
-      <!-- Bagian Navbar, menu navigasi -->
-      <nav id="navbar">
-        <ul>
-          <li><a class="nav-link" href="#home">HOME</a></li>
-          <li><a class="nav-link" href="#my-work">MY WORK</a></li>
-          <li><a class="nav-link" href="#my-experience">MY EXPERIENCES</a></li>
-          <li><a class="nav-link" href="#about-me">ABOUT ME</a></li>
-          <li><a class="nav-link" href="#get-connected">CONNECT WITH ME</a></li>
-        </ul>
+      <nav role="navigation">
+        <div id="menuToggle">
+          <!--
+    A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it.
+    -->
+          <input type="checkbox" />
+
+          <!--Some spans to act as a hamburger.-->
+          <span></span>
+          <span></span>
+          <span></span>
+
+          <!--
+    Too bad the menu has to be inside of the button
+    but hey, it's pure CSS magic.
+    -->
+          <ul id="menu">
+            <a href="#home" class="navlink">
+              <li>HOME</li>
+            </a>
+            <a href="#my-work" class="navlink"> <li>MY WORK</li> </a>
+            <a href="#my-experience" class="navlink">
+              <li>MY EXPERIENCE</li>
+            </a>
+            <a href="#about-me" class="navlink"> <li>ABOUT ME</li> </a>
+            <a href="#get-connected" class="navlink">
+              <li>CONNECT WITH ME</li></a
+            >
+          </ul>
+        </div>
       </nav>
     </header>
     <main>
       <section id="home">
         <div class="welcome">
-          <div class="profile-picture">
-            <img
-              src="./assets/images/profile-picture.jpeg"
-              alt=""
-              class="photo-profile"
-            />
-          </div>
-          <div class="divider"></div>
-          <div class="greeting">
-            <p class="greeting-text">Hallo, i am Khoirul</p>
-          </div>
+          <p class="greeting-text">Hallo, i am Khoirul</p>
         </div>
         <i class="fa-solid fa-bars"></i>
       </section>
