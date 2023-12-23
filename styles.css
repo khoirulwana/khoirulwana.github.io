@@ -112,7 +112,7 @@ body {
   margin: -100px 0 0 100px;
   padding: 50px;
   padding-top: 125px;
-  background: var(--color5);
+  background: var(--color4);
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
@@ -132,7 +132,7 @@ body {
 }
 
 #menu li:hover {
-  background-color: var(--color4);
+  background-color: var(--color5);
   color: var(--color1);
 }
 
@@ -156,8 +156,9 @@ body {
   width: 100%;
   height: 100vh;
   display: grid;
-  justify-items: center;
-  align-items: center;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
 }
 
 /*Projects*/
@@ -233,4 +234,38 @@ body {
 .my-work .project .project-card .view-code:hover {
   background-color: var(--color2);
   color: var(--color5);
+}
+
+.footer {
+  margin: 20px 0;
+}
+.social-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.social-container .email-me {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: auto;
+}
+
+.email-me #message {
+  width: 300px;
+  margin: 10px 0 20px 0;
+  border-radius: 10px;
+  border: none;
+}
+
+.email-me .submit-button {
+  width: 300px;
+  height: 30px;
+}
+
+.social-platform .social-media .fa-brands {
+  width: 60px;
+  font-size: 30px;
 }
