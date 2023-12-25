@@ -167,39 +167,73 @@ body {
   height: auto;
 }
 
-.my-work .project {
-  width: 100%;
+#my-work .project {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  justify-content: center;
-}
-
-.my-work .project .project-card {
-  width: 100%;
-  height: auto;
-  padding: 10px;
-  display: grid;
-  grid-template-areas:
-    "preview preview"
-    "project-title project-title"
-    "preview-site view-code";
   justify-items: center;
-  gap: 20px;
-  border-radius: 10px;
+  gap: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
-.my-work .project .project-card .project-title {
-  grid-area: project-title;
-  margin: 0;
-}
-
-.my-work .project .project-card .preview {
-  grid-area: preview;
+#my-work .project .project-card {
   width: 500px;
-  height: 300px;
+  margin: 20px;
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
   cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
+}
+
+#my-work .project .project-card .parent {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  transition: all 1.1s;
+}
+
+#my-work .project .project-card:hover .parent {
+  transform: scale(1.2);
+}
+
+.my-work .project .project-card .project-1 {
+  background-image: url(assets/images/News\ Page\ SS.png);
+}
+
+.my-work .project .project-card .project-2 {
+  background-image: url(assets/images/Form\ Sign\ Up\ SS.png);
+}
+
+.my-work .project .project-card .project-3 {
+  background-image: url(assets/images/notification-page\ SS.png);
+}
+
+.my-work .project .project-card .project-4 {
+  background-image: url(assets/images/age\ calculator\ ss.png);
+}
+
+.my-work .project .project-card .project-5 {
+  background-image: url(assets/images/result\ summary\ ss.png);
+}
+
+.my-work .project .project-card .project-6 {
+  background-image: url(assets/images/travel\ website\ agency\ SS.png);
+}
+
+.my-work .project .project-card .project-7 {
+  background-image: url(assets/images/Product\ Landing\ Page\ SS.png);
+}
+
+.my-work .project .project-card .project-8 {
+  background-image: url(assets/images/Technical\ Documentation\ Page.png);
+}
+
+.my-work .project .project-card:hover .parent {
+  transform: scale(1.2);
 }
 
 .my-work .project .project-card .preview-site {
