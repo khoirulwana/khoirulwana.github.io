@@ -15,7 +15,23 @@
 body {
   background-color: var(--color5);
   color: var(--color1);
+  scroll-behavior: smooth;
 }
+
+/*reveal effect*/
+
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 /* start, hamburger menu */
 
 #menuToggle {
@@ -159,6 +175,13 @@ body {
   align-content: center;
   justify-content: center;
   text-align: center;
+  font-size: 24px;
+}
+
+#home .welcome .hidden {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 /*Projects*/
@@ -393,7 +416,7 @@ body {
   #my-work .project .project-card {
     width: 100%;
     margin: 20px;
-    height: 350px;
+    height: 300px;
   }
 
   #footer .social-container {
