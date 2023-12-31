@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,900;1,400;1,600;1,900&display=swap");
+
 :root {
   /*using color pallette*/
   --color1: #eeeeee;
@@ -16,6 +18,7 @@ body {
   background-color: var(--color5);
   color: var(--color1);
   scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
 }
 
 /*reveal effect*/
@@ -178,6 +181,10 @@ body {
   font-size: 24px;
 }
 
+#home .welcome .name {
+  font-size: 3.5rem;
+}
+
 #home .welcome .hidden {
   opacity: 0;
   transform: translateY(-100%);
@@ -323,14 +330,29 @@ body {
   color: var(--color5);
 }
 
+#skills-tools .skill-tools-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 30px 20px;
+}
+
+#skills-tools .skill-tools-container .img-shields {
+  background-color: #222222;
+  padding: 10px;
+}
+
 #footer {
   margin: 30px 0;
-  padding: 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--color4);
 }
 
 #footer .social-container {
   display: flex;
-  gap: 20px;
+  gap: 30px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -344,6 +366,11 @@ body {
   flex-direction: column;
   text-align: left;
   box-sizing: border-box;
+}
+
+#footer .social-container .email-me label {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 #footer .social-container .email-me #message {
