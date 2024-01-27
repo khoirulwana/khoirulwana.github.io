@@ -1,5 +1,3 @@
-alert("Hello there! This website is underconstruction");
-
 /*text typing effect for name*/
 const greetingEl = document.querySelector(".name");
 const myNameEl = "KHOIRUL WAKIAH NASUTION";

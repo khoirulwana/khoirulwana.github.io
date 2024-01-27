@@ -19,6 +19,7 @@ body {
   color: var(--color1);
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 
 /*reveal effect*/
@@ -179,10 +180,6 @@ body {
   justify-content: center;
   text-align: center;
   font-size: 24px;
-}
-
-#home .welcome .name {
-  font-size: 3.5rem;
 }
 
 #home .welcome .hidden {
