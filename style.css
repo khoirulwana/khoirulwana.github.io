@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  /* Base Colors */
+  --clr-dark-a0: #000000;
+  --clr-light-a0: #ffffff;
+
+  /* Primary Colors (Biru) */
+  --clr-primary-a0: #09bbef;
+  --clr-primary-a10: #4bc3f1;
+  --clr-primary-a20: #6ccaf3;
+  --clr-primary-a30: #86d2f5;
+  --clr-primary-a40: #9dd9f6;
+  --clr-primary-a50: #b2e1f8;
+
+  /* Surface Colors (Abu-abu Gelap) */
+  --clr-surface-a0: #121212;
+  --clr-surface-a10: #282828;
+  --clr-surface-a20: #3f3f3f;
+  --clr-surface-a30: #575757;
+  --clr-surface-a40: #717171;
+  --clr-surface-a50: #8b8b8b;
+
+  /* Surface Tonal Colors (Hijau Kebiruan) */
+  --clr-surface-tonal-a0: #192124;
+  --clr-surface-tonal-a10: #2e3638;
+  --clr-surface-tonal-a20: #454c4e;
+  --clr-surface-tonal-a30: #5d6365;
+  --clr-surface-tonal-a40: #767b7d;
+  --clr-surface-tonal-a50: #8f9495;
+
+  /* Status Colors */
+  --clr-success-a0: #22946e;
+  --clr-success-a10: #2fb589;
+  --clr-success-a20: #41d2a1;
+
+  --clr-warning-a0: #a87a2a;
+  --clr-warning-a10: #c99c4b;
+  --clr-warning-a20: #e8bd71;
+
+  --clr-danger-a0: #9c2121;
+  --clr-danger-a10: #b53838;
+  --clr-danger-a20: #ce4c4c;
+
+  --clr-info-a0: #21498a;
+  --clr-info-a10: #3864a6;
+  --clr-info-a20: #4a80cc;
+}
+
+body {
+  padding: 20px 100px;
+  background-color: var(--clr-dark-a0);
+  color: var(--clr-light-a0);
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+ul {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: var(--clr-light-a0);
+  font-weight: 500;
+}
+a:hover {
+  color: #ff7f50;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+/*
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #ff7f50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #ff6347;
+}
+img {
+  width: 100px;
+  height: auto;
+}
+img:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}*/
