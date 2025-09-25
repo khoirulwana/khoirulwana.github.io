@@ -103,6 +103,15 @@ a:hover {
   height: 100vh;
 }
 
+.about {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
 .project {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
