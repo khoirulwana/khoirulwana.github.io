@@ -118,6 +118,20 @@ a:hover {
   gap: 20px;
 }
 
+.profile-pic {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .about {
   margin-top: 100px;
   height: 100vh;
