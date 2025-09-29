@@ -88,7 +88,7 @@ header.scrolled {
   transition: 0.3s;
 }
 
-ul {
+.nav-links {
   display: flex;
   gap: 20px;
   align-items: center;
@@ -134,12 +134,27 @@ a:hover {
 
 .about {
   margin-top: 100px;
+  margin-bottom: 40px;
   height: 100vh;
   display: flex;
   flex-direction: row;
   gap: 50px;
   align-items: center;
   justify-content: center;
+}
+
+.bio .skills {
+  margin-bottom: 40px;
+}
+
+.bio .skills li {
+  margin-bottom: 10px;
+  background-color: var(--clr-surface-a10);
+  padding: 5px;
+  border: 1px solid var(--clr-info-a10);
+  border-radius: 5px;
+  width: fit-content;
+  display: inline-block;
 }
 
 .project {
