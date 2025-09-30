@@ -145,11 +145,46 @@ a:hover {
 }
 
 .skillset {
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
-  gap: 10px;
   align-items: center;
-  justify-content: center;
+  gap: 50px;
+  margin-top: 20px;
+  padding-bottom: 50px;
+  border-bottom: 2px solid var(--clr-surface-a20);
+}
+
+.skillset h3 {
+  margin-bottom: 10px;
+}
+
+.skills-list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills-list li {
+  margin-bottom: 5px;
+  background-color: var(--clr-surface-tonal-a20);
+  color: var(--clr-light-a0);
+  padding: 5px 10px;
+  border: 1px solid var(--clr-info-a20);
+  border-radius: 5px;
+  font-size: 0.9em;
+  margin-right: 5px;
+  list-style: none;
+  font-weight: 500;
+}
+
+.languages img,
+.tools img {
+  border-radius: 5px;
+  height: 30px;
 }
 
 .project {
