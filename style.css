@@ -108,7 +108,6 @@ a:hover {
 
 .home {
   text-align: center;
-  margin-top: 50px;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -147,6 +146,7 @@ a:hover {
 .skillset {
   width: 100%;
   height: auto;
+  text-align: left;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -160,8 +160,25 @@ a:hover {
   margin-bottom: 10px;
 }
 
+.skills-fieldset {
+  border: 2px solid var(--clr-surface-a20);
+  background-color: var(--clr-surface-a10);
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+}
+
+.skills-fieldset legend {
+  padding: 0 10px;
+  font-weight: 600;
+  color: var(--clr-primary-a0);
+}
+
 .skills-list {
   width: 100%;
+  background-color: var(--clr-surface-a10);
+  border-radius: 10px;
+  padding: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
