@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <title>Khoirul</title>
   </head>
   <body>
@@ -275,107 +276,98 @@
       <section id="contact" class="contact">
         <div class="contact-container">
           <div class="contact-info">
-            <h2 class="section-title">Contact Info</h2>
-            <ul class="contact-list">
-              <li>
-                <a
-                  href="mailto:khoirul.wana@gmail.com"
-                  target="_blank"
-                  aria-label="Email"
-                >
-                  <img
-                    src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"
-                    alt="Email"
-                  />
-                  khoirul.wana@gmail.com
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/khoirul-wana"
-                  target="_blank"
-                  aria-label="LinkedIn"
-                >
-                  <img
-                    src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"
-                    alt="LinkedIn"
-                  />
-                  linkedin.com/in/khoirul-wana
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/khoirulwana"
-                  target="_blank"
-                  aria-label="GitHub"
-                >
-                  <img
-                    src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white"
-                    alt="GitHub"
-                  />
-                  github.com/khoirulwana
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://wa.me/6281283301230"
-                  target="_blank"
-                  aria-label="WhatsApp"
-                >
-                  <img
-                    src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"
-                    alt="WhatsApp"
-                  />
-                  +62 812-8330-1230
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://t.me/khoirulwana"
-                  target="_blank"
-                  aria-label="Telegram"
-                >
-                  <img
-                    src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"
-                    alt="Telegram"
-                  />
-                  @khoirulwana
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.facebook.com/khoirul.w.n"
-                  target="_blank"
-                  aria-label="Facebook"
-                >
-                  <img
-                    src="https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white"
-                    alt="Facebook"
-                  />
-                  khoirul.w.n
-                </a>
-              </li>
-            </ul>
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-description">
+              Feel free to reach out to me through any of these platforms:
+            </p>
+            <div class="social-links">
+              <a
+                href="mailto:khoirul.wana@gmail.com"
+                target="_blank"
+                aria-label="Email"
+                class="social-link"
+              >
+                <img
+                  src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"
+                  alt="Email"
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/khoirul-wana"
+                target="_blank"
+                aria-label="LinkedIn"
+                class="social-link"
+              >
+                <img
+                  src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"
+                  alt="LinkedIn"
+                />
+              </a>
+              <a
+                href="https://github.com/khoirulwana"
+                target="_blank"
+                aria-label="GitHub"
+                class="social-link"
+              >
+                <img
+                  src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white"
+                  alt="GitHub"
+                />
+              </a>
+              <a
+                href="https://wa.me/6281283301230"
+                target="_blank"
+                aria-label="WhatsApp"
+                class="social-link"
+              >
+                <img
+                  src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"
+                  alt="WhatsApp"
+                />
+              </a>
+              <a
+                href="https://t.me/khoirulwana"
+                target="_blank"
+                aria-label="Telegram"
+                class="social-link"
+              >
+                <img
+                  src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"
+                  alt="Telegram"
+                />
+              </a>
+              <a
+                href="https://www.facebook.com/khoirul.w.n"
+                target="_blank"
+                aria-label="Facebook"
+                class="social-link"
+              >
+                <img
+                  src="https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white"
+                  alt="Facebook"
+                />
+              </a>
+            </div>
           </div>
           <div class="message">
             <h2 class="section-title">Send Message</h2>
-            <form class="contact-form">
+            <form class="contact-form" id="contactForm">
               <div class="form-group">
-                <label for="name">Name</label>
+                <label for="from_name">Name</label>
                 <input
                   type="text"
-                  id="name"
-                  name="name"
+                  id="from_name"
+                  name="from_name"
                   required
                   aria-label="Name"
                 />
               </div>
               <div class="form-group">
-                <label for="email">Email</label>
+                <label for="from_email">Email</label>
                 <input
                   type="email"
-                  id="email"
-                  name="email"
+                  id="from_email"
+                  name="from_email"
                   required
                   aria-label="Email"
                 />
@@ -400,7 +392,12 @@
                   aria-label="Message"
                 ></textarea>
               </div>
-              <button type="submit" class="submit-btn">Send Message</button>
+              <button type="submit" class="submit-btn" id="submitBtn">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-loading" style="display: none"
+                  >Sending...</span
+                >
+              </button>
             </form>
           </div>
         </div>
