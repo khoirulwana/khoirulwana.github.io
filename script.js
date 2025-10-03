@@ -209,3 +209,12 @@ function showNotification(message, type = "info") {
     }, 300);
   }, 5000);
 }
+
+function toggleExperience(header) {
+  const content = header.nextElementSibling;
+  const icon = header.querySelector(".expand-icon");
+
+  // Toggle class active
+  content.classList.toggle("active");
+  icon.classList.toggle("rotated");
+}

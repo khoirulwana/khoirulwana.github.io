@@ -253,6 +253,79 @@ body.home-onload-start .home .home-onload-target {
   gap: 20px;
 }
 
+/* ================= EXPERIENCE SECTION ================= */
+.experience-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: var(--clr-light-a0);
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+.experience-item {
+  background: var(--clr-surface-a10);
+  border-radius: 10px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.experience-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.experience-header {
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--clr-surface-a10);
+  user-select: none;
+}
+
+.experience-header h3 {
+  color: var(--clr-light-a0);
+  font-size: 1.1em;
+}
+
+.expand-icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+  color: var(--clr-primary-a0);
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.expand-icon.rotated {
+  transform: rotate(180deg);
+}
+
+.experience-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  background-color: var(--clr-surface-a10);
+}
+
+.experience-content.active {
+  max-height: 500px;
+  padding: 20px;
+}
+
+.experience-content p {
+  color: var(--clr-light-a0);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
 /* ================= PROJECT SECTION ================= */
 .project {
   display: grid;
