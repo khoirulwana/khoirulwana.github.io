@@ -513,4 +513,31 @@ body.home-onload-start .home .home-onload-target {
   }
 }
 
+/* ================= FOOTER ================= */
+
+.footer {
+  width: 100%;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--clr-surface-a20);
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 20px 15px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+}
+
 /* ================= END ================= */
