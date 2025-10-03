@@ -68,6 +68,71 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
   }
+
+  // Scroll reveal animations
+  const attachReveal = (selector, extraClass = "fade-up") => {
+    document.querySelectorAll(selector).forEach((el) => {
+      el.classList.add("reveal", extraClass);
+    });
+  };
+
+  attachReveal(".summary");
+  attachReveal(".core-competencies");
+  attachReveal(".soft-skills");
+  attachReveal(".languages");
+  attachReveal(".frontend");
+  attachReveal(".backend");
+  attachReveal(".database");
+  attachReveal(".platforms");
+  attachReveal(".experiences");
+  attachReveal(".education");
+  attachReveal(".project .card");
+
+  const revealElements = document.querySelectorAll(".reveal");
+
+  if (revealElements.length > 0) {
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-active");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px 0px -10% 0px",
+        threshold: 0.15,
+      }
+    );
+
+    revealElements.forEach((el) => observer.observe(el));
+  }
+
+  // Home page on-load animation
+  const homeSection = document.getElementById("home");
+  if (homeSection) {
+    const homeIntro = homeSection.querySelector(".intro");
+    const homeAvatar = homeSection.querySelector(".profile-pic");
+    const homeIllustration = homeSection.querySelector(".illustration");
+
+    if (homeIntro) homeIntro.classList.add("home-onload-target");
+    if (homeAvatar) homeAvatar.classList.add("home-onload-target");
+    if (homeIllustration) homeIllustration.classList.add("home-onload-target");
+
+    // ensure styles applied after initial render
+    requestAnimationFrame(() => {
+      document.body.classList.add("home-onload-start");
+      // allow transition to complete before cleaning up
+      setTimeout(() => {
+        document.body.classList.remove("home-onload-start");
+        homeSection
+          .querySelectorAll(".home-onload-target")
+          .forEach((el) => el.classList.remove("home-onload-target"));
+      }, 900);
+    });
+  }
 });
 
 // Notification system

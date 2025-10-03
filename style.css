@@ -145,6 +145,16 @@ a:hover {
   margin-bottom: 20px;
 }
 
+/* Home on-load animation */
+body.home-onload-start .home .home-onload-target {
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+}
+
+.home .home-onload-target {
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
 /* ================= ABOUT SECTION ================= */
 .about {
   width: 60%;
@@ -228,7 +238,10 @@ a:hover {
 }
 
 .languages img,
-.tools img {
+.frontend img,
+.backend img,
+.database img,
+.platforms img {
   border-radius: 5px;
   height: 30px;
 }
@@ -449,6 +462,54 @@ a:hover {
 
   .social-links {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ================= SCROLL REVEAL ================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 600ms ease, transform 600ms ease;
+  will-change: opacity, transform;
+}
+
+.reveal.reveal-active {
+  opacity: 1;
+  transform: none;
+}
+
+.fade-up {
+  transform: translateY(20px);
+}
+
+.fade-down {
+  transform: translateY(-20px);
+}
+
+.fade-left {
+  transform: translateX(-24px);
+}
+
+.fade-right {
+  transform: translateX(24px);
+}
+
+.zoom-in {
+  transform: scale(0.96);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.reveal-active,
+  .fade-up,
+  .fade-down,
+  .fade-left,
+  .fade-right,
+  .zoom-in {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
   }
 }
 
