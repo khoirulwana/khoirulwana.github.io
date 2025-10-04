@@ -218,3 +218,12 @@ function toggleExperience(header) {
   content.classList.toggle("active");
   icon.classList.toggle("rotated");
 }
+
+function toggleEducation(header) {
+  const content = header.nextElementSibling;
+  const icon = header.querySelector(".expand-icon");
+
+  // Toggle class active
+  content.classList.toggle("active");
+  icon.classList.toggle("rotated");
+}
