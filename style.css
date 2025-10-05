@@ -57,8 +57,13 @@
 /* ================= BODY ================= */
 body {
   padding: 20px 50px;
-  background-color: var(--clr-dark-a0);
+  background: linear-gradient(
+    135deg,
+    var(--clr-surface-a0) 60%,
+    var(--clr-surface-a10) 100%
+  );
   color: var(--clr-light-a0);
+  min-height: 100vh;
 }
 
 /* ================= HEADER ================= */
@@ -74,6 +79,10 @@ header {
   left: 0;
   z-index: 1000;
   padding: 10px 50px;
+  background: rgba(18, 18, 18, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(2px);
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
 header.scrolled {
@@ -157,7 +166,7 @@ body.home-onload-start .home .home-onload-target {
 
 /* ================= ABOUT SECTION ================= */
 .about {
-  width: 60%;
+  width: 80%;
   text-align: center;
   margin: 100px auto 60px;
   display: flex;
@@ -187,17 +196,16 @@ body.home-onload-start .home .home-onload-target {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 8px;
   margin-top: 20px;
   padding-bottom: 50px;
 }
 
-.skillset h3 {
-  margin-bottom: 10px;
-}
-
-.skillset div {
+.hard-skills {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .skills-fieldset {
@@ -207,6 +215,7 @@ body.home-onload-start .home .home-onload-target {
   padding: 20px;
   width: 100%;
 }
+
 .skills-fieldset legend {
   padding: 0 10px;
   font-weight: 600;
@@ -246,29 +255,35 @@ body.home-onload-start .home .home-onload-target {
   height: 30px;
 }
 
-.hard-skills {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
 /* ================= EXPERIENCE SECTION ================= */
 .experiences-educations {
   width: 100%;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
   justify-content: space-between;
+  background: var(--clr-surface-a10);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+}
+
+.experiences,
+.educations {
+  flex: 1 1 320px;
+  min-width: 280px;
 }
 
 .experience-container,
 .education-container {
-  flex: 1;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: var(--clr-success-a0);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--clr-surface-a30);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  background: var(--clr-surface-a20);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: box-shadow 0.2s, background 0.2s;
 }
 
 h1 {
@@ -278,71 +293,85 @@ h1 {
   font-size: 2em;
 }
 
-.experience-item,
-.education-item {
-  background: var(--clr-warning-a0);
-  border-radius: 10px;
-  margin-bottom: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
-}
-
-.experience-item:hover,
-.education-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
 .experience-header,
 .education-header {
-  padding: 20px;
-  cursor: pointer;
+  height: 30px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background: var(--clr-danger-a0 -a10);
-  user-select: none;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 1rem 1.2rem;
+  background: var(--clr-surface-a30);
+  color: var(--clr-light-a0);
+  font-weight: 600;
+  transition: background 0.2s;
 }
 
-.experience-header h3,
-.education-header h3 {
-  color: var(--clr-light-a0);
-  font-size: 1.1em;
+.experience-header:hover,
+.education-header:hover {
+  background: var(--clr-primary-a10);
+  color: var(--clr-dark-a0);
+}
+
+.experiences h3,
+.educations h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
 .expand-icon {
-  width: 24px;
-  height: 24px;
-  transition: transform 0.3s ease;
-  color: var(--clr-primary-a0);
-  font-size: 1.5em;
-  font-weight: bold;
+  font-size: 0.8rem;
+  transition: transform 0.2s;
 }
 
-.expand-icon.rotated {
+.experience-container.active .expand-icon,
+.education-container.active .expand-icon {
   transform: rotate(180deg);
 }
 
 .experience-content,
 .education-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
-  background-color: #09bbef;
+  display: none;
+  padding: 0 1.2rem 1rem 1.2rem;
+  color: var(--clr-light-a50);
+  font-size: 1rem;
+  background: var(--clr-surface-a20);
 }
 
-.experience-content.active,
-.education-content.active {
-  max-height: 500px;
-  padding: 20px;
+.experience-container.active .experience-content,
+.education-container.active .education-content {
+  display: block;
 }
 
 .experience-content p,
 .education-content p {
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+  text-align: left;
   color: var(--clr-light-a0);
-  line-height: 1.6;
-  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.experience-content ul,
+.education-content ul {
+  padding-left: 20px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+.experience-content ul li,
+.education-content ul li {
+  text-align: left;
+  list-style-type: disc;
+  margin-bottom: 0.3rem;
+}
+
+@media (max-width: 900px) {
+  .experiences-educations {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.2rem 0.5rem;
+  }
 }
 
 /* ================= PROJECT SECTION ================= */
@@ -353,7 +382,9 @@ h1 {
   margin-top: 20px;
 }
 .card {
-  background-color: var(--clr-surface-a10);
+  background: var(--clr-surface-a20);
+  border: 1px solid var(--clr-surface-a30);
+  color: var(--clr-light-a0);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -421,6 +452,13 @@ h1 {
 .message {
   flex: 1 1 300px;
   min-width: 280px;
+}
+
+.contact-info h2,
+.message h2 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: var(--clr-light-a0);
 }
 
 .contact-description {
@@ -612,9 +650,13 @@ h1 {
 }
 
 .footer-bottom {
+  background: var(--clr-surface-a20);
+  color: var(--clr-light-a50);
+  border-top: 1px solid var(--clr-surface-a30);
+  padding: 1.5rem 0;
   text-align: center;
-  padding-top: 2rem;
   border-top: 1px solid var(--clr-surface-a20);
+  width: 100%;
 }
 
 @media (max-width: 768px) {

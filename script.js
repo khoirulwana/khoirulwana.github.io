@@ -133,6 +133,46 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 900);
     });
   }
+
+  // Smooth scroll for navbar
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+      if (href && href.startsWith("#")) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          // Scroll so section is at the very top, considering fixed header
+          const headerHeight = document.getElementById("header").offsetHeight;
+          const sectionTop =
+            target.getBoundingClientRect().top + window.scrollY - headerHeight;
+          window.scrollTo({
+            top: sectionTop,
+            behavior: "smooth",
+          });
+        }
+      }
+    });
+  });
+
+  // Scrollspy: highlight navbar link on scroll
+  const sections = document.querySelectorAll("main section[id]");
+  const navLinks = document.querySelectorAll(".nav-links a");
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - headerEl.offsetHeight - 10;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+  });
 });
 
 // Notification system
@@ -211,19 +251,11 @@ function showNotification(message, type = "info") {
 }
 
 function toggleExperience(header) {
-  const content = header.nextElementSibling;
-  const icon = header.querySelector(".expand-icon");
-
-  // Toggle class active
-  content.classList.toggle("active");
-  icon.classList.toggle("rotated");
+  const container = header.parentElement;
+  container.classList.toggle("active");
 }
 
 function toggleEducation(header) {
-  const content = header.nextElementSibling;
-  const icon = header.querySelector(".expand-icon");
-
-  // Toggle class active
-  content.classList.toggle("active");
-  icon.classList.toggle("rotated");
+  const container = header.parentElement;
+  container.classList.toggle("active");
 }
