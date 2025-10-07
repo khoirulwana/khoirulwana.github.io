@@ -85,7 +85,8 @@ document.addEventListener("DOMContentLoaded", function () {
   attachReveal(".database");
   attachReveal(".platforms");
   attachReveal(".experiences");
-  attachReveal(".education");
+  attachReveal(".educations");
+  attachReveal(".stats-row");
   attachReveal(".project .card");
 
   const revealElements = document.querySelectorAll(".reveal");
@@ -145,9 +146,12 @@ document.addEventListener("DOMContentLoaded", function () {
           // Scroll so section is at the very top, considering fixed header
           const headerHeight = document.getElementById("header").offsetHeight;
           const sectionTop =
-            target.getBoundingClientRect().top + window.scrollY - headerHeight;
+            target.getBoundingClientRect().top +
+            window.scrollY -
+            headerHeight -
+            20;
           window.scrollTo({
-            top: sectionTop,
+            top: Math.max(0, sectionTop),
             behavior: "smooth",
           });
         }
@@ -155,10 +159,55 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Scrollspy: highlight navbar link on scroll
+  // GitHub Stats loading and error handling
+  const statsImages = document.querySelectorAll(".stats-card img");
+  statsImages.forEach((img) => {
+    img.addEventListener("load", function () {
+      this.style.opacity = "1";
+      // Remove loading animation from parent card
+      const card = this.closest(".stats-card");
+      if (card) {
+        card.style.setProperty("--loading-complete", "1");
+      }
+    });
+
+    img.addEventListener("error", function () {
+      this.style.display = "none";
+      const card = this.closest(".stats-card");
+      if (card) {
+        card.style.setProperty("--loading-complete", "1");
+      }
+      const errorDiv = document.createElement("div");
+      errorDiv.className = "stats-error";
+      errorDiv.innerHTML = `
+        <div style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 200px;
+          color: var(--clr-light-a50);
+          font-style: italic;
+          background: var(--clr-surface-a20);
+          border-radius: 8px;
+          border: 2px dashed var(--clr-surface-a30);
+        ">
+          <span>📊 Stats temporarily unavailable</span>
+        </div>
+      `;
+      this.parentNode.appendChild(errorDiv);
+    });
+
+    // Set initial opacity for smooth loading
+    img.style.opacity = "0";
+    img.style.transition = "opacity 0.3s ease";
+  });
+
+  // Scrollspy: highlight navbar link on scroll (throttled for performance)
   const sections = document.querySelectorAll("main section[id]");
   const navLinks = document.querySelectorAll(".nav-links a");
-  window.addEventListener("scroll", () => {
+
+  let ticking = false;
+  function updateActiveNav() {
     let current = "";
     sections.forEach((section) => {
       const sectionTop = section.offsetTop - headerEl.offsetHeight - 10;
@@ -172,6 +221,14 @@ document.addEventListener("DOMContentLoaded", function () {
         link.classList.add("active");
       }
     });
+    ticking = false;
+  }
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      requestAnimationFrame(updateActiveNav);
+      ticking = true;
+    }
   });
 });
 
