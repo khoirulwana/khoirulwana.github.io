@@ -49,7 +49,7 @@
     </header>
     <main>
       <!-- ================= HOME SECTION ================= -->
-      <section id="home" class="home">
+      <section id="home" class="home" aria-label="Home section">
         <div class="profile-pic">
           <img src="assets/images/avatar.png" alt="profile picture" />
         </div>
@@ -65,7 +65,7 @@
         <div class="illustration"></div>
       </section>
       <!-- ================= ABOUT SECTION ================= -->
-      <section id="about" class="about">
+      <section id="about" class="about" aria-label="About section">
         <div class="summary">
           <h2 class="section-title">About Me</h2>
           <p>
@@ -324,93 +324,139 @@
           </div>
         </div>
       </section>
+
+      <!-- ================= SECTION DIVIDER ================= -->
+      <div class="section-divider"></div>
+
       <!-- ================= PROJECT SECTION ================= -->
-      <section id="project" class="project">
+      <section id="project" class="project" aria-label="Projects section">
         <h2 class="section-title">My Projects</h2>
-        <div class="card">
-          <img src="assets/images/LabTelkom.png" alt="lab telkom" />
+        <article class="card">
+          <img
+            src="assets/images/LabTelkom.png"
+            alt="System Telecommunication Virtual Laboratory interface showing interactive lab components"
+          />
           <h3>System Telecommunication Virtual Laboratory</h3>
           <p>Interactive learning platform for electronics lab work</p>
-          <p>
+          <div class="tech-stack">
             <span>HTML5</span><span>CSS3</span><span>JavaScript</span
             ><span>Vue.js</span><span>Node.js</span><span>Express</span>
-          </p>
+          </div>
           <div class="link">
             <a
               href="https://lab-telkom.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="View live demo of System Telecommunication Virtual Laboratory"
               >Live</a
             >
             <a
               href="https://github.com/khoirulwana/Lab-Telkom"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="View source code of System Telecommunication Virtual Laboratory on GitHub"
               >Source</a
             >
           </div>
-        </div>
-        <div class="card">
-          <img src="assets/images/ss ecommerce2.png" alt="e-commerce" />
+        </article>
+        <article class="card">
+          <img
+            src="assets/images/ss ecommerce2.png"
+            alt="E-Commerce Catalog interface showing product listings and shopping features"
+          />
           <h3>E-Commerce Catalog</h3>
-          <p>Description of Project 1</p>
           <p>
+            Modern e-commerce platform with product catalog and shopping
+            functionality
+          </p>
+          <div class="tech-stack">
             <span>HTML5</span><span>CSS3</span><span>JavaScript</span
             ><span>Bootstrap</span>
-          </p>
+          </div>
           <div class="link">
-            <a href="https://ecommerce-catalog-ruby.vercel.app/" target="_blank"
+            <a
+              href="https://ecommerce-catalog-ruby.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View live demo of E-Commerce Catalog"
               >Live</a
             >
             <a
               href="https://github.com/khoirulwana/ecommerce-catalog"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View source code of E-Commerce Catalog on GitHub"
               >Source</a
             >
           </div>
-        </div>
-        <div class="card">
-          <img src="assets/images/Bookshelf-apps.png" alt="bookshelf app" />
+        </article>
+        <article class="card">
+          <img
+            src="assets/images/Bookshelf-apps.png"
+            alt="Bookshelf App interface showing book management features"
+          />
           <h3>Bookshelf App</h3>
-          <p>A simple bookshelf management app</p>
-          <p><span>HTML5</span><span>CSS3</span><span>JavaScript</span></p>
+          <p>
+            A simple and intuitive bookshelf management application for
+            organizing your reading list
+          </p>
+          <div class="tech-stack">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+          </div>
           <div class="link">
             <a
               href="https://bookshelf-apps-khoirul.netlify.app/"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View live demo of Bookshelf App"
               >Live</a
             >
             <a
               href="https://github.com/khoirulwana/bookshelf-apps"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View source code of Bookshelf App on GitHub"
               >Source</a
             >
           </div>
-        </div>
-        <div class="card">
+        </article>
+        <article class="card">
           <img
             src="assets/images/travel website agency SS.jpg"
-            alt="travel agency website"
+            alt="Travel Agency website interface showing travel destinations and booking features"
           />
           <h3>Travel Agency Web Page</h3>
-          <p>Travel Agency Web Page</p>
-          <p><span>HTML5</span><span>CSS3</span><span>JavaScript</span></p>
+          <p>
+            Beautiful and responsive travel agency website with destination
+            showcases and booking interface
+          </p>
+          <div class="tech-stack">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+          </div>
           <div class="link">
             <a
               href="https://codepen.io/khoirulwana/full/gOjgLaE"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View live demo of Travel Agency Web Page on CodePen"
               >Live</a
             >
             <a
               href="https://github.com/khoirulwana/travel-website-page"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View source code of Travel Agency Web Page on GitHub"
               >Source</a
             >
           </div>
-        </div>
+        </article>
       </section>
+
+      <!-- ================= SECTION DIVIDER ================= -->
+      <div class="section-divider"></div>
+
       <!-- ================= CONTACT SECTION ================= -->
-      <section id="contact" class="contact">
+      <section id="contact" class="contact" aria-label="Contact section">
         <div class="contact-container">
           <div class="contact-info">
             <h2 class="section-title">Get In Touch</h2>
@@ -421,6 +467,7 @@
               <a
                 href="https://www.linkedin.com/in/khoirul-wana"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 class="social-link"
               >
@@ -432,6 +479,7 @@
               <a
                 href="https://github.com/khoirulwana"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="GitHub"
                 class="social-link"
               >
@@ -443,6 +491,7 @@
               <a
                 href="https://wa.me/6281283301230"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="WhatsApp"
                 class="social-link"
               >
@@ -454,6 +503,7 @@
               <a
                 href="https://t.me/khoirulwana"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Telegram"
                 class="social-link"
               >
@@ -465,6 +515,7 @@
               <a
                 href="https://www.facebook.com/khoirul.w.n"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Facebook"
                 class="social-link"
               >
@@ -520,9 +571,7 @@
               </div>
               <button type="submit" class="submit-btn" id="submitBtn">
                 <span class="btn-text">Send Message</span>
-                <span class="btn-loading" style="display: none"
-                  >Sending...</span
-                >
+                <span class="btn-loading">Sending...</span>
               </button>
             </form>
           </div>

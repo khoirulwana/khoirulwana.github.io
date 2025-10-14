@@ -87,7 +87,9 @@ document.addEventListener("DOMContentLoaded", function () {
   attachReveal(".experiences");
   attachReveal(".educations");
   attachReveal(".stats-row");
+  attachReveal(".section-divider", "fade-up");
   attachReveal(".project .card");
+  attachReveal(".project article");
 
   const revealElements = document.querySelectorAll(".reveal");
 
